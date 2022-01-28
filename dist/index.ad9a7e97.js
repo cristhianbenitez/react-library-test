@@ -33,14 +33,14 @@ const App = ()=>{
         className: "my-react-library",
         __source: {
             fileName: "index.tsx",
-            lineNumber: 31,
+            lineNumber: 32,
             columnNumber: 5
         },
         __self: this
     }, /*#__PURE__*/ React.createElement("div", {
         __source: {
             fileName: "index.tsx",
-            lineNumber: 32,
+            lineNumber: 33,
             columnNumber: 7
         },
         __self: this
@@ -52,21 +52,21 @@ const App = ()=>{
         placeholder: "your name",
         __source: {
             fileName: "index.tsx",
-            lineNumber: 33,
+            lineNumber: 34,
             columnNumber: 7
         },
         __self: this
     }), /*#__PURE__*/ React.createElement("p", {
         __source: {
             fileName: "index.tsx",
-            lineNumber: 39,
+            lineNumber: 40,
             columnNumber: 7
         },
         __self: this
     }, "this is my react "), /*#__PURE__*/ React.createElement("h2", {
         __source: {
             fileName: "index.tsx",
-            lineNumber: 40,
+            lineNumber: 41,
             columnNumber: 7
         },
         __self: this
@@ -75,7 +75,7 @@ const App = ()=>{
         ,
         __source: {
             fileName: "index.tsx",
-            lineNumber: 41,
+            lineNumber: 42,
             columnNumber: 7
         },
         __self: this
@@ -84,19 +84,26 @@ const App = ()=>{
         ,
         __source: {
             fileName: "index.tsx",
-            lineNumber: 42,
+            lineNumber: 43,
             columnNumber: 7
         },
         __self: this
-    }, "+"), /*#__PURE__*/ React.createElement("div", {
-        className: "virtualdom",
+    }, "+"), /*#__PURE__*/ React.createElement("br", {
         __source: {
             fileName: "index.tsx",
             lineNumber: 44,
             columnNumber: 7
         },
         __self: this
-    })));
+    }), /*#__PURE__*/ React.createElement("button", {
+        id: "button",
+        __source: {
+            fileName: "index.tsx",
+            lineNumber: 45,
+            columnNumber: 7
+        },
+        __self: this
+    }, "Show Virtual Dom")));
 };
 const render = (reactElementOrStringOrNumber, container)=>{
     if ([
@@ -120,7 +127,7 @@ const rerender = ()=>{
     render(/*#__PURE__*/ React.createElement(App, {
         __source: {
             fileName: "index.tsx",
-            lineNumber: 77,
+            lineNumber: 79,
             columnNumber: 10
         },
         __self: this
@@ -129,7 +136,7 @@ const rerender = ()=>{
 render(/*#__PURE__*/ React.createElement(App, {
     __source: {
         fileName: "index.tsx",
-        lineNumber: 80,
+        lineNumber: 82,
         columnNumber: 8
     },
     __self: this
@@ -137,26 +144,29 @@ render(/*#__PURE__*/ React.createElement(App, {
 const displayVirtualDOM = ()=>{
     const virtualDom = Object.assign({
     }, React.createElement(App, App));
-    const El = document.querySelector('#virtual-dom');
-    const textTag = document.createElement('p');
-    El.innerHTML = `<p>
-  tag:${virtualDom.tag}
-  </p>
-  `;
+    const El = document.getElementById('virtual-dom');
+    El.innerHTML += `<p>tag:${virtualDom.tag}</p>`;
     El.innerHTML += `<p>
-  props:{
-  children{
-    <p id='children'></p>
-  }
-className:${virtualDom.props.className}
-  }
-  </p>`;
+  props:{children{<p id='children'></p>}
+  className:${virtualDom.props.className}
+  <h2>TO SEE MORE OPEN CONSOLE</h2>}</p>`;
     virtualDom.props.children.forEach((child)=>{
-        console.log(child);
         const children = document.getElementById('children');
         children.innerHTML += `tag:${child.tag} &nbsp;`;
+        children.innerHTML += `<p>children:${child.props.children[0]}</p>`;
+    });
+    document.getElementById('button').addEventListener('click', ()=>{
+        El.classList.toggle('hide');
     });
 };
 displayVirtualDOM();
+console.log(/*#__PURE__*/ React.createElement(App, {
+    __source: {
+        fileName: "index.tsx",
+        lineNumber: 104,
+        columnNumber: 13
+    },
+    __self: this
+}));
 
 //# sourceMappingURL=index.ad9a7e97.js.map

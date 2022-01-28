@@ -28,7 +28,6 @@ const useState = (initialState) => {
 const App = () => {
   const [name, setName] = useState('');
   const [count, setCount] = useState(0);
-  const [show, setShow] = useState(false);
   return (
     <div className="my-react-library">
       <div>my name is {name}</div>
@@ -42,8 +41,6 @@ const App = () => {
       <h2>the count is: {count}</h2>
       <button onclick={() => setCount(count - 1)}>-</button>
       <button onclick={() => setCount(count + 1)}>+</button>
-
-      <div className="virtualdom">{}</div>
       <br />
       <button id="button">Show Virtual Dom</button>
     </div>
