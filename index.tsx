@@ -98,7 +98,5 @@ const displayVirtualDOM = () => {
     El.classList.toggle('hide');
   });
 };
-
 displayVirtualDOM();
-
 console.log(<App />);

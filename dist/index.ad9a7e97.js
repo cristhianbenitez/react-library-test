@@ -163,7 +163,7 @@ displayVirtualDOM();
 console.log(/*#__PURE__*/ React.createElement(App, {
     __source: {
         fileName: "index.tsx",
-        lineNumber: 104,
+        lineNumber: 102,
         columnNumber: 13
     },
     __self: this
